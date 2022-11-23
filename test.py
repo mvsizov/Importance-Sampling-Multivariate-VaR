@@ -8,11 +8,20 @@ from multivariate_var import multivariate_var
 class TestVaR:
     def test_VaR(self):
 
-        assert np.isclose(multivariate_var(tickers = ['AAPL','FB', 'C', 'DIS'],
-                                            weights = np.array([.25, .3, .15, .3]),
-                                            from_date = "2018-01-01",
-                                            to_date = '2019-01-01',
-                                            initial_investment = 1000000,
-                                            conf_level=0.05,
-                                            n = 5 ), # number of days for n-days VaR calculation)
-                                            5235.91, atol=0.0001)
+        tickers_list = [['AAPL', 'FB', 'C'], ['DIS', 'TSLA', 'ADSK', 'AMC'],
+                        ['AAPL', 'FB', 'C', 'DIS', 'TSLA', 'ADSK', 'AMC']]
+        weights_list = [np.array([0.1, 0.1, 0.8]), np.array([0.5, 0.05, 0.4, 0.05]),
+                        np.array([0.2, 0.2, 0.2, 0.2, 0.1, 0.05, 0.05])]
+        from_date_list = ['2018-02-01', '2018-04-01', '2018-08-01']
+        to_date_list = ['2020-05-01', '2020-08-01', '2021-01-01']
+        intitial_investment_list = [1000, 1050, 1000.1]
+        conf_level_list = [0.01, 0.05, 0.07]
+        n_list = [10, 50, 100]
+        results = [145.71, 245.1, 248.16]
+
+        for values, result in zip(zip(tickers_list, weights_list, from_date_list, to_date_list,
+                                      intitial_investment_list, conf_level_list, n_list), results):
+            assert multidimentional_var(*values) == result
+
+
+

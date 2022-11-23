@@ -25,26 +25,26 @@ class TestVaR:
             assert (multivariate_var(*values) == result )
 
 
-# class TestMetrics:
-#     def test_quantile_loss(self):
-#         np.random.seed(0)
-#         target = np.random.randn(10)
-#         var = np.ones(10)
-#         assert np.isclose(quantile_loss(var, target, alpha=0.9), 1.0461, atol=0.0001)
-#         assert np.isclose(quantile_loss(var, target, alpha=0.1), 0.6269, atol=0.0001)
-#
-#     def test_pof_test(self):
-#         np.random.seed(0)
-#         target = np.random.randn(10)
-#         var = -np.ones(10) * 2
-#         assert np.isclose(pof_test(var, target, alpha=0.95), 0.3111, atol=0.0001)
-#
-#     def test_if_test(self):
-#         np.random.seed(0)
-#         target = np.random.randn(1000)
-#         var = -np.ones(1000) * 2
-#         assert np.isclose(if_test(var, target), 0.2770, atol=0.0001)
-#
-#
-#
-#
+class TestMetrics:
+    def test_quantile_loss(self):
+        np.random.seed(0)
+        target = np.random.randn(10)
+        var = np.ones(10)
+        assert np.isclose(quantile_loss(var, target, alpha=0.9), 1.0461, atol=0.0001)
+        assert np.isclose(quantile_loss(var, target, alpha=0.1), 0.6269, atol=0.0001)
+
+    def test_pof_test(self):
+        np.random.seed(0)
+        target = np.random.randn(10)
+        var = -np.ones(10) * 2
+        assert np.isclose(pof_test(var, target, alpha=0.95), 0.3111, atol=0.0001)
+
+    def test_if_test(self):
+        np.random.seed(0)
+        target = np.random.randn(1000)
+        var = -np.ones(1000) * 2
+        assert np.isclose(if_test(var, target), 0.2770, atol=0.0001)
+
+
+
+

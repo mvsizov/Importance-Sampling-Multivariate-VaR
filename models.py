@@ -15,28 +15,4 @@ def multivariate_var(tickers, # list of tickers
     '''
     Be careful: you should round the answer to 2 decimal points!
     '''
-    # raise Exception(NotImplementedError)
-
-    # import returns data
-    data = pdr.get_data_yahoo(tickers, start=from_date, end=to_date)['Close']
-    returns = data.pct_change()
-
-    # generate covariance matrix
-    cov_matrix = returns.cov()
-
-    # calculate mean and standard deviation
-    port_mean = returns.mean().dot(weights)
-    mean_investment = (1 + port_mean) * initial_investment
-    port_stdev = np.sqrt(weights.T.dot(cov_matrix).dot(weights))
-    stdev_investment = initial_investment * port_stdev
-
-    # determine confidence level cutoff from the normal distribution
-    cutoff = norm.ppf(alpha, mean_investment, stdev_investment)
-
-    # calculate daily VaR
-    VaR = initial_investment - cutoff
-
-    # calculate n-days VaR
-    VaR_n_days = np.round(VaR * np.sqrt(n), 2)
-
-    return VaR_n_days
+    raise Exception(NotImplementedError)

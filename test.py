@@ -3,7 +3,7 @@ from pandas_datareader import data as pdr
 import numpy as np
 import datetime as dt
 from scipy.stats import norm
-from multivariate_var import multivariate_var
+from models import multivariate_var
 from metrics import pof_test, if_test, quantile_loss
 
 class TestVaR:

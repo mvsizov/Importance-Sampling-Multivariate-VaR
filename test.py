@@ -21,7 +21,7 @@ class TestVaR:
 
         for values, result in zip(zip(tickers_list, weights_list, from_date_list, to_date_list,
                                       intitial_investment_list, conf_level_list, n_list), results):
-            assert multidimentional_var(*values) == result
+            assert (multivariate_var(*values) == result )
 
 
 

@@ -15,4 +15,4 @@ class TestVaR:
                                             initial_investment = 1000000,
                                             conf_level=0.05,
                                             n = 5 ), # number of days for n-days VaR calculation)
-                                            52325.91, atol=0.0001)
+                                            5235.91, atol=0.0001)

@@ -2,4 +2,4 @@ pandas
 pandas_datareader
 numpy
 datetime
-scipy.stats
+scipy

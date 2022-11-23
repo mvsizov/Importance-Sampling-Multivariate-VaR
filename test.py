@@ -1,6 +1,5 @@
 import pandas as pd
 from pandas_datareader import data as pdr
-import fix_yahoo_finance as yf
 import numpy as np
 import datetime as dt
 from scipy.stats import norm

@@ -16,12 +16,12 @@ class TestVaR:
         from_date_list = ['2018-02-01', '2018-04-01', '2018-08-01']
         to_date_list = ['2020-05-01', '2020-08-01', '2021-01-01']
         intitial_investment_list = [1000, 1050, 1000.1]
-        conf_level_list = [0.01, 0.05, 0.07]
+        alpha_list = [0.01, 0.05, 0.07]
         n_list = [10, 50, 100]
         results = [145.71, 245.1, 248.16]
 
         for values, result in zip(zip(tickers_list, weights_list, from_date_list, to_date_list,
-                                      intitial_investment_list, conf_level_list, n_list), results):
+                                      intitial_investment_list, alpha_list, n_list), results):
             assert (multivariate_var(*values) == result )
 
 
